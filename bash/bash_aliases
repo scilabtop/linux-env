@@ -1,5 +1,8 @@
-arch64-linux
-#cuda_folder=aarch64-linux, .,  
+
+#!/bin/bash
+cuda_ver=10.0
+cuda_folder=aarch64-linux
+#cuda_folder=aarch64-linux, ., 
 cudnn_ver=7.2
 platform=aarch64
 #platform=qnx, aarch64, aarch64-android, ARMv7-android
