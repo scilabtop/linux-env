@@ -1,6 +1,6 @@
 #!/bin/bash
 cat /dev/null > ~/.bash_aliases
-cat ./bash/bash_aliases > ~/.bash_aliases
+cat ./bash/bash_aliases_x86_64 > ~/.bash_aliases
 
 cat /dev/null > ~/.bashrc
 cat ./bash/bash_rc > ~/.bashrc

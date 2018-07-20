@@ -11,8 +11,8 @@ git clone https://github.com/scilabtop/linux-env.git
 
 # Go to the directory and install
 cd ./$script_dir
-chmod +x ./install
-bash ./install
+chmod +x ./install-x86_64
+bash ./install-x86_64
 cd ..
 
 # Clean
