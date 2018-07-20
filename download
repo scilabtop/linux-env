@@ -1,10 +1,24 @@
+#!/bin/bash
+# Go to home directory that own full auth
 cd ~
 script_dir=linux-env
+
+# Remove old version if exists
 rm -rf ./$script_dir
+
+# Get the latest version
 git clone https://github.com/scilabtop/linux-env.git
+
+# Go to the directory and install
 cd ./$script_dir
 chmod +x ./install
 bash ./install
 cd ..
+
+# Clean
 rm -rf ./linux-env
+
+# Make changes valid
+source ~/.bashrc
+
 
