@@ -1,8 +1,10 @@
 cd ~
-rm -rf ./linux-env
+script_dir=linux-env
+rm -rf ./$script_dir
 git clone https://github.com/scilabtop/linux-env.git
-linux_env_dir=~/linux-env
-chmod +x $linux_env_dir/install
-bash $linux_env_dir/install
-rm -rf $linux_env_dir/linux-env
+cd ./$script_dir
+chmod +x ./install
+bash ./install
+cd ..
+rm -rf ./linux-env
 
