@@ -1,7 +1,7 @@
 cd /tmp
 git clone https://github.com/scilabtop/linux-env.git
-linux_env_dir=/tmp/linux-end
+linux_env_dir=/tmp/linux-env
 chmod +x $linux_env_dir/install
 $linux_env_dir/install
-rm -rf $linux_env_dir/linux-end
+rm -rf $linux_env_dir/linux-env
 
