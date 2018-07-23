@@ -1,4 +1,8 @@
-
+Host server-sc-02
+    HostName sc-xterm-02.nvidia.com
+    Port 22
+    User jianweiz
+    IdentitiesOnly no
 Host server-sc
     HostName computelab-154.nvidia.com 
     Port 22
