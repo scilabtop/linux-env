@@ -21,4 +21,4 @@ rm -rf ./linux-env
 # Make changes valid
 source ~/.bashrc
 
-
+export-libpath
