@@ -23,4 +23,11 @@ Host server-minilab
     HostName minilab.top
     Port 22
     User jonyz
-    IdentitiesONly no
+    IdentitiesOnly no
+Host server-xavier-a-sh
+    HostName 10.19.180.140
+    Port 22
+    User jianweiz
+    IdentitiesOnly no
+
+
