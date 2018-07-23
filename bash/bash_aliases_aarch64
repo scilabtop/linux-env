@@ -14,7 +14,7 @@ trunk_dir=$dit_dir/trunk
 toolkit_dir=/home/scratch.svc_compute_arch/release/cuda_toolkit
 alias cd-trunk='cd $trunk_dir'
 
-alias cd-bin='cd $trunk_dir/build/cuda-$cuda_ver/$cudnn_ver/$platform'
+alias cd-bin='cd $trunk_dir/build/cuda-$cuda_ver/$cudnn_ver/$target'
 
 alias cd-scratch='cd $user_home'
 
