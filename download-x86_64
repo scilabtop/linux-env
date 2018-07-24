@@ -18,12 +18,3 @@ cd ..
 # Clean
 rm -rf ./linux-env
 
-# Make changes valid
-source ~/.bashrc
-
-env=`pwd`
-bash
-cd $env
-export-libpath
-
-

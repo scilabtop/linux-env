@@ -12,5 +12,10 @@ cat /dev/null > ~/.ssh/config
 cat ./bash/ssh_config > ~/.ssh/config
 chmod 644 ~/.ssh/config
 
-
+# Make changes valid
+source ~/.bashrc
+#env=`pwd`
+#bash
+#cd $env
+#export-libpath
 
