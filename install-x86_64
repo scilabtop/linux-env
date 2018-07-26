@@ -1,4 +1,5 @@
 #!/bin/bash
+echo '+++ Script: install-x64_64'
 cat /dev/null > ~/.bash_aliases
 cat ./bash/bash_aliases_x86_64 > ~/.bash_aliases
 
@@ -19,3 +20,4 @@ source ~/.bashrc
 #cd $env
 #export-libpath
 
+echo '+++ End'
