@@ -36,4 +36,4 @@ echo "Processor: "; cat /proc/cpuinfo| grep "processor"| wc -l;\
 alias export-libpath='export LD_LIBRARY_PATH=${dit_dir}/externals/cudnn/${target}/${cudnn_ver}/cuda-${cuda_ver}/lib64/:${dit_dir}/externals/cublas-x64-linux/cuda-${cuda_ver}:${toolkit_dir}/r${cuda_ver}/latest/lib64/:${trunk_dir}/build/cuda-${cuda_ver}/${cudnn_ver}/${target}:${dit_dir}/externals/cuda-${cuda_ver}-qnx/lib:${dit_dir}/externals/cuda-${cuda_ver}-${target}/${target}-linux/lib:/usr/lib:/usr/lib/${target}-linux-gnu'
 
 alias update-config-aarch64='curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download-aarch64 | bash'
-alias update-config-x86_64='curl https://raw.githubusercontent.com/scliabtop/linux-env/master/download-x86_64 | bash'
+alias update-config-x86_64='curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download-x86_64 | bash'
