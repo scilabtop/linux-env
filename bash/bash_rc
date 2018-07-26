@@ -119,3 +119,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+if [ "$PS1" ]; then
+    if [ -x /bin/zsh ] ; then exec /bin/zsh ; fi
+fi
+
+export JAVA_HOME=/home/utils/java/jdk1.8.0_131
+export PATH=$JAVA_HOME/bin:$PATH 
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+
+
