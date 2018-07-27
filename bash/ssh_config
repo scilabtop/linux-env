@@ -29,7 +29,7 @@ Host server-minilab
     User jonyz
     IdentitiesOnly no
 Host server-xavier-a-sh
-    HostName 10.19.180.140
+    HostName 10.19.180.101
     Port 22
     User jianweiz
     IdentitiesOnly no
