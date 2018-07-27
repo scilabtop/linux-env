@@ -120,8 +120,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+#eval "$(ssh-agent -s)"
+#ssh-add ~/.ssh/id_rsa
 
 export JAVA_HOME=/home/utils/java/jdk1.8.0_131
 export PATH=$JAVA_HOME/bin:$PATH 
