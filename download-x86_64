@@ -7,7 +7,7 @@ echo '=== Remove old version if exists'
 rm -rf ./$script_dir
 
 echo '=== Get the latest version'
-git clone https://github.com/scilabtop/linux-env.git
+git clone -b master https://github.com/scilabtop/linux-env.git --depth=1
 
 echo '=== Go to the directory and install'
 cd ./$script_dir

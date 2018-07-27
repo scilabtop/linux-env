@@ -7,7 +7,7 @@ script_dir=linux-env
 rm -rf ./$script_dir
 
 # Get the latest version
-git clone https://github.com/scilabtop/linux-env.git
+git clone -b master https://github.com/scilabtop/linux-env.git --depth=1
 
 # Go to the directory and install
 cd ./$script_dir
