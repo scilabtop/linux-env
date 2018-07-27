@@ -120,11 +120,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-if [ "$PS1" ]; then
-    if [ -x /bin/zsh ] ; then exec /bin/zsh ; fi
-fi
-
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
