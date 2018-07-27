@@ -31,7 +31,7 @@ Host server-minilab
 Host server-xavier-a-sh
     HostName 10.19.180.101
     Port 22
-    User jianweiz
+    User nvidia
     IdentitiesOnly no
 
 
