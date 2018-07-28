@@ -1,0 +1,37 @@
+Host server-sc-02
+    HostName sc-xterm-02.nvidia.com
+    Port 22
+    User jianweiz
+    IdentitiesOnly no
+Host server-sc
+    HostName computelab-154.nvidia.com 
+    Port 22
+    User jianweiz 
+    IdentitiesOnly no
+Host server-zj
+    HostName shcompute-ws1.nvidia.com
+    Port 22
+    User jianweiz
+    IdentitiesOnly no
+Host server-scilab
+    HostName scilab.top
+    Port 22
+    User root
+    IdentitiesOnly no
+Host server-home 
+    HostName 192.168.1.11
+    Port 22
+    User janus
+    IdentitiesOnly no
+Host server-minilab
+    HostName minilab.top
+    Port 22
+    User jonyz
+    IdentitiesOnly no
+Host server-xavier-a-sh
+    HostName 10.19.180.101
+    Port 22
+    User nvidia
+    IdentitiesOnly no
+
+
