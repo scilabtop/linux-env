@@ -74,7 +74,7 @@ if ( $?prompt ) then
     if ( "$uid" == "0" ) then
      set prompt = "$C%U%m%u:$Y%B%n:%C2%b%#$W " 
     else
-     set prompt = "$C%U%m%u:$Y%B%n:%C2%#$W " 
+     set prompt = "$C%U%n%u@$G%C2%#$W " 
     endif
 endif
 
