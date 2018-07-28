@@ -1,44 +1,95 @@
 
 #!/bin/tcsh
-set cuda_ver=10.0
-set cuda_folder=aarch64-linux
-#cuda_folder=aarch64-linux, ., 
-set cudnn_ver=7.2
-set platform=aarch64
-#platform=qnx, aarch64, aarch64-android, ARMv7-android
-set target=aarch64
-#target=x86_64, aarch64
-set user_home=/home/scratch.${USER}_gpu
-set dit_dir=$user_home/p4trees/sw/sw/gpgpu/MachineLearning/DIT
-set trunk_dir=$dit_dir/trunk
-set toolkit_dir=/home/scratch.svc_compute_arch/release/cuda_toolkit
-alias cd-trunk='cd $trunk_dir'
+set cuda_ver = "10.0"
+set cuda_folder = "aarch64-linux"
+##cuda_folder=aarch64-linux, ., 
+set cudnn_ver = "7.2"
+set platform = "aarch64"
+##platform=qnx, aarch64, aarch64-android, ARMv7-android
+set target = "aarch64"
+##target=x86_64, aarch64
+set user_home = "/home/scratch.${USER}_gpu"
+set dit_dir = "$user_home/p4trees/sw/sw/gpgpu/MachineLearning/DIT"
+set trunk_dir = "$dit_dir/trunk"
+set toolkit_dir = "/home/scratch.svc_compute_arch/release/cuda_toolkit"
+alias cd-trunk "cd $trunk_dir"
 
-alias cd-bin='cd $trunk_dir/build/cuda-$cuda_ver/$cudnn_ver/$target'
+alias cd-bin "cd $trunk_dir/build/cuda-$cuda_ver/$cudnn_ver/$target"
 
-alias cd-scratch='cd $user_home'
+alias cd-scratch "cd $user_home"
 
-alias ut-int8='./infer_test --gtest_filter=caskConvolutionTests.Int8'
+#alias ut-int8='./infer_test --gtest_filter=caskConvolutionTests.Int8'
 
-alias make-tr='/usr/bin/make CUDA=cuda-$cuda_ver CUDNN=$cudnn_ver CUDA_INSTALL=$toolkit_dir/r$cuda_ver/latest -j 20 $target'
+alias make-tr "/usr/bin/make CUDA=cuda-$cuda_ver CUDNN=$cudnn_ver CUDA_INSTALL=$toolkit_dir/r$cuda_ver/latest -j 20 $target"
 
-alias make-clean='/usr/bin/make clean'
+alias make-clean "/usr/bin/make clean"
 
-alias srun-sc145='srun -w computelab-145 --pty /bin/bash'
+alias srun-sc145 "srun -w computelab-145 --pty /bin/bash"
 
-alias cpuinfo='echo "CPU Model: "; cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c; \
-echo "Physical ID: "; cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l;\
-cat /proc/cpuinfo| grep "cpu cores"| uniq;\
-echo "Processor: "; cat /proc/cpuinfo| grep "processor"| wc -l;\
-'
+alias cpuinfo "echo 'CPU Model: '; cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c; \
+    echo 'Physical ID: '; cat /proc/cpuinfo| grep 'physical id'| sort| uniq| wc -l;\
+    cat /proc/cpuinfo| grep 'cpu cores'| uniq;\
+    echo 'Processor: '; cat /proc/cpuinfo| grep 'processor'| wc -l;"
 
-alias export-libpath='export LD_LIBRARY_PATH=$dit_dir/externals/cuda-${cuda_ver}-${platform}/${cuda_folder}/lib:$dit_dir/externals/cudnn/$target/$cudnn_ver/cuda-${cuda_ver}/lib64/:$dit_dir/externals/cublas-x64-linux/cuda-${cuda_ver}/:${toolkit_dir}/r${cuda_ver}/latest/lib64/:$trunk_dir/build/cuda-${cuda_ver}/${cudnn_ver}/aarch64/:${dit_dir}/externals/cudnn/aarch64/${cudnn_ver}/cuda-${cuda_ver}/lib64/:/usr/lib:/usr/lib/aarch64-linux-gnu/'
+set LD_LIBRARY_PATH = (\
+    ${dit_dir}/externals/cuda-${cuda_ver}-${platform}/${cuda_folder}/lib \
+    ${dit_dir}/externals/cudnn/$target/$cudnn_ver/cuda-${cuda_ver}/lib64/ \
+    ${dit_dir}/externals/cublas-x64-linux/cuda-${cuda_ver}/ \
+    ${toolkit_dir}/r${cuda_ver}/latest/lib64/ \
+    ${trunk_dir}/build/cuda-${cuda_ver}/${cudnn_ver}/aarch64/ \
+    /usr/lib \
+    /usr/lib/aarch64-linux-gnu/ \
+    )
 
-alias update-config-aarch64='curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download-aarch64 | bash'
-alias update-config-x86_64='curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download-x86_64 | bash'
+alias update-config-aarch64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download-aarch64 | bash"
+alias update-config-x86_64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download-x86_64 | bash"
 
-export JAVA_HOME=/home/utils/java/jdk1.8.0_131
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+setenv JAVA_HOME "/home/utils/java/jdk1.8.0_131"
+setenv path "$JAVA_HOME/bin \
+    /usr/bin ~/bin /home/utils/bin /bin /sbin . /usr/sbin \
+    /usr/ucb /usr/css/bin/ /usr/lib /etc /home/nv/bin /usr/bin/X11 \
+    /usr/local/lsf/bin $path "
+
+# Get rid of redudants
+setenv path `echo $path | sed -e 's/$/:/;s/^/:/;s/:/::/g;:a;s#\(:[^:]\{1,\}:\)\(.*\)\1#\1\2#g;ta;s/::*/:/g;s/^://;s/:$//;'`
+
+setenv CLASSPATH ". \
+            $JAVA_HOME/lib/dt.jar \
+            $JAVA_HOME/lib/tools.jar \
+            $JAVA_HOME/lib \
+            $JAVA_HOME/jre/lib "
+
+# color
+set K="%{\e[0;30m%}"
+set R="%{\e[0;31m%}"
+set G="%{\e[0;32m%}"
+set Y="%{\e[0;33m%}"
+set B="%{\e[0;34m%}"
+set M="%{\e[0;35m%}"
+set C="%{\e[0;36m%}"
+set W="%{\e[0;37m%}"
+set CC="%{\e[0m%}"
+            
+if ( $?prompt ) then
+    if ( "$uid" == "0" ) then
+     set prompt = "$C%U%m%u:$Y%B%~%b%#$W " 
+    else
+     set prompt = "$C%U%m%u:$Y%B%~%b%#$W " 
+    endif
+endif
+
+# ls color
+setenv LSCOLORS ExGxFxdxCxegedabagExEx
+setenv CLICOLOR yes
+
+set autolist
+set correct = cmd
+alias mv 'mv -i'
+alias cp 'cp -i'
+alias rm 'rm -i'
+alias q 'exit'
+alias .. 'cd ..'
+alias ds 'du -sh'
+alias dh 'df -h -a -T'
 
 
