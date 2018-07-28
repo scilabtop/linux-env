@@ -1,23 +1,23 @@
 #!/bin/bash
 echo '+++ Script: install-x64_64'
-cat /dev/null > ~/.bash_aliases
-cat ./bash/bash_aliases_x86_64 > ~/.bash_aliases
+cat /dev/null > ~/.cshrc_custom
+cat ./csh/csh_aliases_x86_64 > ~/.cshrc_custom
 
-cat /dev/null > ~/.bashrc
-cat ./bash/bash_rc > ~/.bashrc
+#cat /dev/null > ~/.bashrc
+#cat ./bash/bash_rc > ~/.bashrc
 
 cat /dev/null > ~/.vimrc
-cat ./bash/vim_rc > ~/.vimrc
+cat ./csh/vim_rc > ~/.vimrc
 
 cat /dev/null > ~/.ssh/config
-cat ./bash/ssh_config > ~/.ssh/config
+cat ./csh/ssh_config > ~/.ssh/config
 chmod 644 ~/.ssh/config
 
-cat ./bash/id_rsa.pub > ~/.ssh/authorized_keys
+cat ./csh/id_rsa.pub > ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
 # Make changes valid
-source ~/.bashrc
+source ~/.cshrc
 #env=`pwd`
 #bash
 #cd $env
