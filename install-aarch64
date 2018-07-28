@@ -12,10 +12,10 @@ cat /dev/null > ~/.ssh/config
 cat ./csh/ssh_config > ~/.ssh/config
 chmod 644 ~/.ssh/config
 
-if [ -f ~/.cshrc ]; then
-    echo 'source ~/.cshrc';
-    soruce ~/.cshrc;
-fi
+#if [ -f ~/.cshrc ]; then
+#    echo 'source ~/.cshrc';
+#    soruce ~/.cshrc;
+#fi
 
 
 
