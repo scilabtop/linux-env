@@ -91,5 +91,7 @@ alias q 'exit'
 alias .. 'cd ..'
 alias ds 'du -sh'
 alias dh 'df -h -a -T'
+alias ls 'ls --color=auto'
+alias grep 'grep --color=auto'
 
 
