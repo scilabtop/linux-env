@@ -21,17 +21,17 @@ git clone -b master https://github.com/scilabtop/linux-env.git --depth=1
 cd ./$script_dir
 chmod +x ./install
 
-if ( -e /bin/csh ) then
+if ( -e /bin/tcsh ) then
+    set cmd = "/bin/tcsh"
+else if ( -e /bin/csh ) then
     set cmd = "/bin/csh"
-else if ( -e /bin/tcsh ) then
-    set cmd = "/bin/tcsh ./install $1"
 else
     echo "csh/tcsh not installed"
 endif
 
 echo "Begin to install $cmd ..."
-if ( $~cmd ) then
-    `$cmd`
+if ( $?cmd ) then
+    $cmd ./install $1
 else
     echo "something wrong with csh/tcsh"
 endif
