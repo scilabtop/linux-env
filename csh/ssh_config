@@ -33,5 +33,10 @@ Host server-xavier-a-sh
     Port 22
     User nvidia
     IdentitiesOnly no
+Host server-jonasl-dt
+    HostName jonasl-dt.nvidia.com
+    Port 22
+    User jianweiz
+    IdentitiesOnly no
 
 
