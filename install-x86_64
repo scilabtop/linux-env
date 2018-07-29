@@ -1,7 +1,9 @@
 #!/bin/bash
 echo '+++ Script: install-x64_64'
+setenv target "x86_64"
+
 cat /dev/null > ~/.cshrc_custom
-cat ./csh/csh_aliases_x86_64 > ~/.cshrc_custom
+cat ./csh/csh_aliases > ~/.cshrc_custom
 
 #cat /dev/null > ~/.bashrc
 #cat ./bash/bash_rc > ~/.bashrc

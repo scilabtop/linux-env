@@ -1,6 +1,8 @@
 #!/bin/bash
+
+setenv target "aarch64"
 cat /dev/null > ~/.cshrc_custom
-cat ./csh/csh_aliases_aarch64 > ~/.cshrc_custom
+cat ./csh/csh_aliases > ~/.cshrc_custom
 
 #cat /dev/null > ~/.bashrc
 #cat ./bash/bash_rc > ~/.bashrc
