@@ -1,6 +1,7 @@
 #!/bin/csh
 # Go to home directory that own full auth
-if ( $~1 ) then
+echo "Checking input ..."
+if ( $?1 ) then
     echo $1
 else
     echo "Inalid input argument"
@@ -13,6 +14,7 @@ set script_dir = "linux-env"
 rm -rf ./$script_dir
 
 # Get the latest version
+echo "Clone the latest code ..."
 git clone -b master https://github.com/scilabtop/linux-env.git --depth=1
 
 # Go to the directory and install
@@ -27,6 +29,7 @@ else
     echo "csh/tcsh not installed"
 endif
 
+echo "Begin to install $cmd ..."
 if ( $~cmd ) then
     $cmd ./install $1
 else
