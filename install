@@ -1,12 +1,25 @@
-#!/bin/bash
+#!/bin/csh
 echo '+++ Script: install-x64_64'
-setenv target "x86_64"
+if ( $?1 ) then
+    if ( $1 == "x86_64" ) then
+        setenv target "x86_64"
+    else if ( $1 == "aarch64" ) then
+        setenv target "aarch64"
+    endif
+endif
+
+if ( $?target ) then
+    echo $target
+else
+    setenv target "x86_64"
+    echo "Invalid input, will use default x86_64"
+endif
 
 cat /dev/null > ~/.cshrc_custom
 cat ./csh/csh_aliases > ~/.cshrc_custom
 
-#cat /dev/null > ~/.bashrc
-#cat ./bash/bash_rc > ~/.bashrc
+cat /dev/null > ~/.bashrc
+cat ./csh/bash_rc > ~/.bashrc
 
 cat /dev/null > ~/.vimrc
 cat ./csh/vim_rc > ~/.vimrc
@@ -19,12 +32,12 @@ cat ./csh/id_rsa.pub > ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
 # Make changes valid
-source ~/.cshrc
+if ( -e ~/.cshrc ) then
+    source ~/.cshrc
+endif
 #env=`pwd`
 #bash
 #cd $env
 #export-libpath
 
 echo '+++ End'
-
-

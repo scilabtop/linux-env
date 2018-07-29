@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/csh
 # Go to home directory that own full auth
 cd ~
-script_dir=linux-env
+set script_dir = "linux-env"
 
 # Remove old version if exists
 rm -rf ./$script_dir
@@ -12,7 +12,21 @@ git clone -b master https://github.com/scilabtop/linux-env.git --depth=1
 # Go to the directory and install
 cd ./$script_dir
 chmod +x ./install-aarch64
-bash ./install-aarch64
+
+if ( -e /bin/csh ) then
+    set cmd = "/bin/csh"
+else if ( -e /bin/tcsh ) then
+    set cmd = "/bin/tcsh"
+else
+    echo "csh/tcsh not installed"
+endif
+
+if ( $~cmd ) then
+    $cmd ./install-aarch64
+else
+    echo "something wrong with csh/tcsh"
+endif
+
 cd ..
 
 # Clean
