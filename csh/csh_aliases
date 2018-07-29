@@ -53,8 +53,8 @@ set LD_LIBRARY_PATH = (\
     /usr/lib/aarch64-linux-gnu/ \
     )
 
-alias update-config-aarch64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download aarch64 | tcsh"
-alias update-config-x86_64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download x86_64 | tcsh"
+alias update-config-aarch64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download | tcsh /dev/stdin aarch64"
+alias update-config-x86_64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download | tcsh /dev/stdin x86_64"
 
 setenv JAVA_HOME "/home/utils/java/jdk1.8.0_131"
 setenv path "$JAVA_HOME/bin \

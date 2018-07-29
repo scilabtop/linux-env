@@ -1,5 +1,11 @@
 #!/bin/csh
 # Go to home directory that own full auth
+if ( $~1 ) then
+    echo $1
+else
+    echo "Inalid input argument"
+endif
+
 cd ~
 set script_dir = "linux-env"
 
@@ -11,7 +17,7 @@ git clone -b master https://github.com/scilabtop/linux-env.git --depth=1
 
 # Go to the directory and install
 cd ./$script_dir
-chmod +x ./install-aarch64
+chmod +x ./install
 
 if ( -e /bin/csh ) then
     set cmd = "/bin/csh"
@@ -22,7 +28,7 @@ else
 endif
 
 if ( $~cmd ) then
-    $cmd ./install-aarch64
+    $cmd ./install $1
 else
     echo "something wrong with csh/tcsh"
 endif
