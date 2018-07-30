@@ -2,21 +2,21 @@
 echo '+++ Script: install-x64_64'
 if ( $?1 ) then
     if ( $1 == "x86_64" ) then
-        setenv target "x86_64"
+        set target = "x86_64"
     else if ( $1 == "aarch64" ) then
-        setenv target "aarch64"
+        set target = "aarch64"
     endif
 endif
 
 if ( $?target ) then
     echo $target
 else
-    setenv target "x86_64"
+    set target = "x86_64"
     echo "Invalid input, will use default x86_64"
 endif
 
 cat /dev/null > ~/.cshrc_custom
-echo "setenv target $target \n" > ~/.cshrc_custom
+echo "set target = $target \n" > ~/.cshrc_custom
 cat ./csh/csh_aliases >> ~/.cshrc_custom
 
 cat /dev/null > ~/.bashrc
