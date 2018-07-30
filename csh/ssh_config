@@ -9,7 +9,7 @@ Host server-sc
     User jianweiz 
     IdentitiesOnly no
 Host server-zj
-    HostName shcompute-ws1.nvidia.com
+    HostName shcompute-login.nvidia.com
     Port 22
     User jianweiz
     IdentitiesOnly no
