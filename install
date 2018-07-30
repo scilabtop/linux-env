@@ -16,7 +16,7 @@ else
 endif
 
 cat /dev/null > ~/.cshrc_custom
-echo "set env target $target \n" > ~/.cshrc_custom
+echo "setenv target $target \n" > ~/.cshrc_custom
 cat ./csh/csh_aliases >> ~/.cshrc_custom
 
 cat /dev/null > ~/.bashrc
