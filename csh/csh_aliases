@@ -2,8 +2,9 @@
 set cuda_ver = "10.0"
 
 if ( $?target ) then
+    echo '$target'
 else
-    set target = "x86_64"
+    setenv target "x86_64"
     echo 'Set target x86_64'
 endif
 
