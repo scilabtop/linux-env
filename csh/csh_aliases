@@ -61,7 +61,7 @@ setenv JAVA_HOME "/home/utils/java/jdk1.8.0_131"
 setenv path "$JAVA_HOME/bin \
     /usr/bin ~/bin /home/utils/bin /bin /sbin . /usr/sbin \
     /usr/ucb /usr/css/bin/ /usr/lib /etc /home/nv/bin /usr/bin/X11 \
-    /usr/local/lsf/bin $path "
+    /usr/bin /usr/local/lsf/bin $path "
 
 # Get rid of redudants
 setenv path `echo $path | sed -e 's/$/:/;s/^/:/;s/:/::/g;:a;s#\(:[^:]\{1,\}:\)\(.*\)\1#\1\2#g;ta;s/::*/:/g;s/^://;s/:$//;'`
