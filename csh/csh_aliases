@@ -44,6 +44,8 @@ alias cpuinfo "echo 'CPU Model: '; cat /proc/cpuinfo | grep name | cut -f2 -d: |
     cat /proc/cpuinfo| grep 'cpu cores'| uniq;\
     echo 'Processor: '; cat /proc/cpuinfo| grep 'processor'| wc -l;"
 
+alias sshfs "sshfs -o reconnect -o no_check_root -o allow_other -o auto_unmount -o intr -o cache=yes -o kernel_cache -o compression=no -o large_read -o Ciphers=arcfour -F ~/.ssh/config"
+
 setenv LD_LIBRARY_PATH "${dit_dir}/externals/cuda-${cuda_ver}-${platform}/${cuda_folder}/lib/"
 setenv LD_LIBRARY_PATH "${LD_LIBRARY_PATH}:${dit_dir}/externals/cudnn/$target/$cudnn_ver/cuda-${cuda_ver}/lib64/"
 setenv LD_LIBRARY_PATH "${LD_LIBRARY_PATH}:${dit_dir}/externals/cublas-x64-linux/cuda-${cuda_ver}/"
