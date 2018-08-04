@@ -48,7 +48,7 @@ alias sshfs "sshfs -o reconnect -o no_check_root -o allow_other -o auto_unmount 
 
 alias make "/usr/bin/make"
 
-setenv LD_LIBRARY_PATH "${dit_dir}/externals/cuda-${cuda_ver}-${platform}/${cuda_folder}/lib/"
+setenv LD_LIBRARY_PATH ${dit_dir}/externals/cuda-${cuda_ver}-${platform}/${cuda_folder}/lib/
 setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}":${dit_dir}/externals/cudnn/$target/$cudnn_ver/cuda-${cuda_ver}/lib64/"
 setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}":${dit_dir}/externals/cublas-x64-linux/cuda-${cuda_ver}/"
 setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}":${toolkit_dir}/r${cuda_ver}/latest/lib64/"
@@ -60,7 +60,7 @@ alias update-config-aarch64 "curl https://raw.githubusercontent.com/scilabtop/li
 alias update-config-x86_64 "curl https://raw.githubusercontent.com/scilabtop/linux-env/master/download | tcsh /dev/stdin x86_64"
 setenv JAVA_HOME "/home/utils/java/jdk1.8.0_131"
 setenv PATH ${PATH}":$JAVA_HOME/bin:/usr/bin:~/bin:/home/utils/bin:/bin:/sbin"
-setenv PATH ${PATH}":.:/usr/sbin:/usr/ucb:/usr/css/bin/"
+setenv PATH ${PATH}":`pwd`:/usr/sbin:/usr/ucb:/usr/css/bin/"
 setenv PATH ${PATH}":/usr/lib:/etc:/home/nv/bin:/usr/bin/X11"
 setenv PATH ${PATH}":/usr/bin:/usr/local/lsf/bin"
 
