@@ -112,5 +112,5 @@ alias grep 'grep --color=auto'
 
 setenv CONDA_ENVS_PATH /home/scratch.jianweiz_gpu/install/anaconda3/envs
 alias activate 'source /home/scratch.jianweiz_gpu/install/anaconda3/bin/activate.csh'
-
+alias deactivate 'source /home/scratch.jianweiz_gpu/install/anaconda3/bin/deactivate.csh'
 
