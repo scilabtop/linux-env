@@ -126,7 +126,8 @@ fi
 export JAVA_HOME=/home/utils/java/jdk1.8.0_131
 export PATH=$JAVA_HOME/bin:$PATH 
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+CUBLAS_PATH=/usr/local/cuda-9.0/lib64
+CUPTI_PATH=/usr/local/cuda-9.0/extras/CUPTI/lib64/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUBLAS_PATH:$CUPIT_PATH
 
-if [ "$PS1" ]; then
-    if [ -x /bin/tcsh ] ; then exec /bin/tcsh ; fi
-fi
+
