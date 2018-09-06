@@ -117,7 +117,7 @@ alias deactivate 'source /home/scratch.jianweiz_gpu/install/anaconda3/bin/deacti
 
 # cask specific env
 set P4HWROOT=$p4_trees/hw
-set CUDA_PATH=${toolkit_dir}/r${cuda_ver}/latest/lib64/
+set CUDA_PATH=${toolkit_dir}/r${cuda_ver}/latest
 
 
 
