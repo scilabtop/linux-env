@@ -25,6 +25,7 @@ cat ./csh/bash_rc > ~/.bashrc
 cat /dev/null > ~/.vimrc
 cat ./csh/vim_rc > ~/.vimrc
 
+mkdir -p ~/.ssh
 cat /dev/null > ~/.ssh/config
 cat ./csh/ssh_config > ~/.ssh/config
 chmod 644 ~/.ssh/config
