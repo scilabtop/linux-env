@@ -68,7 +68,7 @@ setenv PATH ${PATH}":`pwd`:/usr/sbin:/usr/ucb:/usr/css/bin/"
 setenv PATH ${PATH}":/usr/lib:/etc:/home/nv/bin:/usr/bin/X11"
 setenv PATH ${PATH}":/usr/bin:/usr/local/lsf/bin"
 setenv PATH ${PATH}":/usr/local/bin"
-setenv PATH "/home/scratch.jianweiz_gpu/install/anaconda3/bin:"${PATH}
+setenv PATH "${conda_home}/bin:"${PATH}
 
 # Get rid of redudants
 setenv path `echo $PATH | sed -e 's/$/:/;s/^/:/;s/:/::/g;:a;s#\(:[^:]\{1,\}:\)\(.*\)\1#\1\2#g;ta;s/::*/:/g;s/^://;s/:$//;'`
