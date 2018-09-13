@@ -33,6 +33,10 @@ chmod 644 ~/.ssh/config
 cat ./csh/id_rsa.pub > ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
+echo "Install  VIM colors"
+\cp -f ./industry.vim /usr/share/vim/vim74/colors/industry.vim
+
+
 # Make changes valid
 if ( -e ~/.cshrc ) then
     source ~/.cshrc
