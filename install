@@ -35,7 +35,7 @@ chmod 600 ~/.ssh/authorized_keys
 
 echo "Install VIM colors"
 set vim_color='/usr/share/vim/vim74/colors/industry.vim'
-if (-e ${vim_color}) | -e then
+if (!-e ${vim_color}) then
     sudo \cp -f ./csh/industry.vim ${vim_color}
 endif
 
