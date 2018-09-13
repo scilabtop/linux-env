@@ -22,6 +22,7 @@ set platform = "aarch64"
 #set target = "aarch64"
 ##target=x86_64, aarch64
 set user_home = "/home/scratch.${USER}_gpu"
+set conda_home = "${user_home}/install/anaconda3"
 set p4_trees = "$user_home/p4trees"
 set dit_dir = "$user_home/p4trees/sw/sw/gpgpu/MachineLearning/DIT"
 set trunk_dir = "$dit_dir/trunk"
@@ -111,9 +112,9 @@ alias dh 'df -h -a -T'
 alias ls 'ls --color=auto'
 alias grep 'grep --color=auto'
 
-setenv CONDA_ENVS_PATH /home/scratch.jianweiz_gpu/install/anaconda3/envs
-alias activate 'source /home/scratch.jianweiz_gpu/install/anaconda3/bin/activate.csh'
-alias deactivate 'source /home/scratch.jianweiz_gpu/install/anaconda3/bin/deactivate.csh'
+setenv CONDA_ENVS_PATH '${conda_home}/envs'
+alias activate 'source ${conda_home}/bin/activate.csh'
+alias deactivate 'source ${conda_home}/bin/deactivate.csh'
 
 # cask specific env
 set P4HWROOT=$p4_trees/hw
