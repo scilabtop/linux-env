@@ -1,4 +1,9 @@
-Host server-sc-02
+Host server-sc-xterm-vnc
+    HostName sc-xterm-15.nvidia.com
+    Port 22
+    User jianweiz
+    IdentitiesOnly no
+Host server-sc-xterm
     HostName sc-xterm-02.nvidia.com
     Port 22
     User jianweiz
@@ -37,6 +42,11 @@ Host server-jonasl-dt
     HostName jonasl-dt.nvidia.com
     Port 22
     User jianweiz
+    IdentitiesOnly no
+Host server-yanchaol-dt
+    HostName 10.19.180.89
+    Port 22
+    User nvidia
     IdentitiesOnly no
 
 
