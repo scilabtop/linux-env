@@ -117,6 +117,7 @@ alias grep 'grep --color=auto'
 setenv CONDA_ENVS_PATH '${conda_home}/envs'
 alias activate 'source ${conda_home}/bin/activate.csh'
 alias deactivate 'source ${conda_home}/bin/deactivate.csh'
+source ${conda_home}/etc/profile.d/conda.csh
 
 # cask specific env
 set P4HWROOT=$p4_trees/hw
