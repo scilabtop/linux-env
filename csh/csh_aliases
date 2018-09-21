@@ -24,10 +24,12 @@ set platform = "aarch64"
 set user_home = "/home/scratch.${USER}_gpu"
 set conda_home = "${user_home}/install/anaconda3"
 set p4_trees = "$user_home/p4trees"
+set ml_dir = "$user_home/ml"
 set dit_dir = "$user_home/p4trees/sw/sw/gpgpu/MachineLearning/DIT"
 set trunk_dir = "$dit_dir/trunk"
 set toolkit_dir = "/home/scratch.svc_compute_arch/release/cuda_toolkit"
 alias cd-trunk "cd $trunk_dir"
+setenv TRAIN_VAL_DIR ${user_home}/data/imagenet/train-val-tfrecord
 
 alias cd-bin "cd $trunk_dir/build/cuda-$cuda_ver/$cudnn_ver/$target"
 
@@ -68,7 +70,9 @@ setenv PATH ${PATH}":`pwd`:/usr/sbin:/usr/ucb:/usr/css/bin/"
 setenv PATH ${PATH}":/usr/lib:/etc:/home/nv/bin:/usr/bin/X11"
 setenv PATH ${PATH}":/usr/bin:/usr/local/lsf/bin"
 setenv PATH ${PATH}":/usr/local/bin"
+setenv PATH ${PATH}":$toolkit_dir/r$cuda_ver/latest/bin"
 setenv PATH "${conda_home}/bin:"${PATH}
+setenv CUDA_ROOT "$toolkit_dir/r$cuda_ver/latest"
 
 # Get rid of redudants
 setenv path `echo $PATH | sed -e 's/$/:/;s/^/:/;s/:/::/g;:a;s#\(:[^:]\{1,\}:\)\(.*\)\1#\1\2#g;ta;s/::*/:/g;s/^://;s/:$//;'`
@@ -118,6 +122,8 @@ setenv CONDA_ENVS_PATH '${conda_home}/envs'
 alias activate 'source ${conda_home}/bin/activate.csh'
 alias deactivate 'source ${conda_home}/bin/deactivate.csh'
 source ${conda_home}/etc/profile.d/conda.csh
+setenv PYTHONPATH ${ml_dir}/tensorflow/models
+setenv TRT_DIR ${ml_dir}/tensorRT/TensorRT-5.0.2.0
 
 # cask specific env
 set P4HWROOT=$p4_trees/hw
