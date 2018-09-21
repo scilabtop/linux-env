@@ -52,6 +52,9 @@ alias sshfs "sshfs -o reconnect -o no_check_root -o allow_other -o auto_unmount 
 
 alias make "/usr/bin/make"
 
+mkdir -p $user_home/tmp
+alias nvcc "nvcc --keep-dir $user_home/tmp "
+
 #setenv LD_LIBRARY_PATH ${dit_dir}/externals/cuda-${cuda_ver}-${platform}/${cuda_folder}/lib/
 setenv LD_LIBRARY_PATH "${dit_dir}/externals/cudnn/$target/$cudnn_ver/cuda-${cuda_ver}/lib64/"
 #setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}":${dit_dir}/externals/cublas-x64-linux/cuda-${cuda_ver}/"
